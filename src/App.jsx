@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import TaskInput from './components/TaskInput.jsx'
-// import Header from './components/Header.jsx'
+import TaskItem from './components/TaskItem.jsx'
 // import Header from './components/Header.jsx'
 import './App.css'
 
@@ -12,8 +12,14 @@ function App() {
     <div className = "app">
       <Header />
       <TaskInput />
-      {/* <TaskItem />
-      <TaskList /> */}
+      
+      <TaskItem 
+       task={{
+    id: 1,
+    title: "Buy groceries",
+    completed: false,
+  }}/>
+      {/* <TaskList /> */} 
       
     </div>
     
