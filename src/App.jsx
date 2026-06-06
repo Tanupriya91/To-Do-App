@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import Header from './components/Header.jsx'
+import TaskInput from './components/TaskInput.jsx'
+// import Header from './components/Header.jsx'
+// import Header from './components/Header.jsx'
 import './App.css'
 
 function App() {
@@ -10,11 +11,13 @@ function App() {
   return (
     <div className = "app">
       <Header />
-      <TodoForm />
-      <TodoList />
+      <TaskInput />
+      {/* <TaskItem />
+      <TaskList /> */}
+      
     </div>
     
   );
 }
 
-export default App
+export default App;
