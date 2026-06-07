@@ -8,28 +8,12 @@ import "./App.css";
 
 function App() {
   const {tasks, addTask} = useTasks();
-  const tasks = [
-    {
-      id: 1,
-      title: "Buy groceries",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Finish React project",
-      completed: true,
-    },
-    {
-      id: 3,
-      title: "Go for a walk",
-      completed: false,
-    },
-  ];
+  
 
   return (
     <div className="app">
       <Header />
-      <TaskInput />
+      <TaskInput onAdd={addTask}/>
       <FilterBar />
 
       <TaskList tasks={tasks} />

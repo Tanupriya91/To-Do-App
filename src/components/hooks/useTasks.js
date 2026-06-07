@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useTask() {
+export function useTasks() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (title) => {

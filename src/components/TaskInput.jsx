@@ -1,9 +1,24 @@
-function TaskInput(){
+import { useState } from "react";
+function TaskInput({onAdd}){
+    const [inputValue, setInputValue] = useState("");
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        if(!inputValue.trim())return;
+
+        onAdd(inputValue);
+        setInputValue("");
+       };
     return (
-        <form className="task-input">
+        <form className="task-input"
+        onSubmit={handleSubmit}
+        >
             <input
             type="text"
             placeholder="Add a new task..."
+            value={inputValue}
+            onChange={(e) => 
+                setInputValue(e.target.value)
+            }
             />
 
             <button type="submit">
