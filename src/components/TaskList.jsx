@@ -12,4 +12,4 @@ function TaskList({ tasks }){
         </div>
     )
 }
-export default TakList;
+export default TaskList;
