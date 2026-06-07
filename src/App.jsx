@@ -7,7 +7,7 @@ import { useTasks } from "./components/hooks/useTasks.js";
 import "./App.css";
 
 function App() {
-  const {tasks, addTask} = useTasks();
+  const {tasks, addTask, deleteTask, toggleTask} = useTasks();
   
 
   return (
@@ -16,7 +16,10 @@ function App() {
       <TaskInput onAdd={addTask}/>
       <FilterBar />
 
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks}
+      onDelete={deleteTask}
+      onToggle={toggleTask}
+       />
     </div>
   );
 }

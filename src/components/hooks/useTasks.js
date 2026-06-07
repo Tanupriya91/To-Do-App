@@ -12,8 +12,23 @@ export function useTasks() {
 
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
-  const deleteTask = () => {};
-  const toggleTask = () => {};
+  const deleteTask = (id) => {
+    setTasks((prevTasks)=>
+    prevTasks.filter((task) => task.id !== id)
+);
+  };
+
+  const toggleTask = () => {
+    setTasks((prevTasks) =>
+    prevTasks.map((task) =>
+    task.id === id
+? {
+    ...task,
+    completed: !task.completed,
+}
+:task
+));
+  };
 
   return {
     tasks,
