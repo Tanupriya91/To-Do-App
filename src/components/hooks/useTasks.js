@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function useTasks() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(()=>{
+    const saved = localStorage.getItem("tasks");
+
+    return saved
+      ? JSON.parse(saved)
+      : [];
+  });
   const [filter, setFilter] = useState("all");
+  useEffect(() => {
+    localStorage.setItem(
+      "tasks",
+      JSON.stringify(tasks)
+    );
+  },[tasks])
   const visibleTasks = tasks.filter((task) => {
     if (filter === "all") return true;
 
