@@ -28,12 +28,16 @@ function App() {
         counts={counts}
       />
 
-      <TaskList 
-        tasks={visibleTasks} 
-        onDelete={deleteTask} 
-        onToggle={toggleTask} />
+      <TaskList
+        tasks={visibleTasks}
+        onDelete={deleteTask}
+        onToggle={toggleTask}
+      />
     </div>
   );
 }
+<footer className="footer">
+  {counts.active} task{counts.active !== 1 ? "s" : ""} remaining
+</footer>;
 
 export default App;
