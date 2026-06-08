@@ -24,6 +24,11 @@ export function useTasks() {
 
     return task.completed;
   });
+  const clearCompleted = () => {
+  setTasks((prevTasks) =>
+    prevTasks.filter((task) => !task.completed)
+  );
+};
 
   const counts = {
     all: tasks.length,
@@ -63,6 +68,7 @@ export function useTasks() {
     addTask,
     deleteTask,
     toggleTask,
+    clearCompleted,
     filter,
     setFilter,
     counts,
