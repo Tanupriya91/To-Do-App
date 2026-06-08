@@ -7,19 +7,31 @@ import { useTasks } from "./components/hooks/useTasks.js";
 import "./App.css";
 
 function App() {
-  const {tasks, addTask, deleteTask, toggleTask} = useTasks();
-  
+  const {
+    tasks,
+    visibleTasks,
+    addTask,
+    deleteTask,
+    toggleTask,
+    filter,
+    setFilter,
+    counts,
+  } = useTasks();
 
   return (
     <div className="app">
       <Header />
-      <TaskInput onAdd={addTask}/>
-      <FilterBar />
+      <TaskInput onAdd={addTask} />
+      <FilterBar
+        currentFilter={filter}
+        onFilterChange={setFilter}
+        counts={counts}
+      />
 
-      <TaskList tasks={tasks}
-      onDelete={deleteTask}
-      onToggle={toggleTask}
-       />
+      <TaskList 
+        tasks={visibleTasks} 
+        onDelete={deleteTask} 
+        onToggle={toggleTask} />
     </div>
   );
 }
